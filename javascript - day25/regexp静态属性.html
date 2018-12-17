@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var pattern = /(b)aidu/;
+        var str = 'this baidu 更懂中文';
+        pattern.test(str);
+        // alert(RegExp.input)   //当前被匹配的字符串 同  alert(RegExp.$_)
+        // alert(RegExp.leftContext)   //最后一次匹配前的子串 
+        // alert(RegExp.rightContext)   //在上次匹配之后的子串 
+        // alert(RegExp.lastParen)   //最后一对圆括号内的匹配子串
+        // alert(RegExp.lastMatch)    //最后一对匹配的字符串
+        alert(pattern.multiline)  //用于指定这是否所有表达式都用于多行的布尔值
+        
+        // Opera不支input lastMatch lastParen multiline   （早些年是不支持的。现在不确定）
+    </script>
+</body>
+</html>

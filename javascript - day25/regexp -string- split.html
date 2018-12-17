@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>regexp -string- split</title>
+</head>
+<body>
+    <script>
+           var pattern = / /g;   
+           var str = '马里亚纳海沟暗藏于亚洲东部太平洋底 一道全长2550千米的弧 最深处超过1.1万米 人类——或者人造设备——抵达这里的次数屈指可数 高压 漆黑和冰冷的一个世界深藏其间 罕有生命痕迹';
+           var arr = str.split(pattern);   //把空格拆开分开数组
+        
+        for(var i=0;i<arr.length;i++){
+            console.log(arr[i])
+        }
+
+        </script>
+</body>
+</html>

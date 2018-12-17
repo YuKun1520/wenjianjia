@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>regexp - string - search</title>
+</head>
+<body>
+    <script>
+           var pattern = /陈晶/;   
+           var str = '他叫陈晶，真的是陈晶吗？';
+           alert(str.search(pattern))    //查找到返回的位置2，如果找不到返回-1;
+           
+           //注意：search 方法是找到即返回，无需设置g全局，无效
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>load</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+     
+     <input type="button" value="异步的数据请求" />
+     <div id="show"></div>
+
+
+	<script>
+         $('input').click(function(){
+             $.get('get.php',{
+                user:'应煜鑫'
+             },function(text,status,xhr){
+                if(status==="success"){
+                    $('#show').html(text)
+                }
+             })
+         })    
+		
+	</script>
+</body>
+</html>

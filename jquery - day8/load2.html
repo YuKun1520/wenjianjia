@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>load</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+     
+     <input type="button" value="异步的数据请求" />
+     <div id="show"></div>
+
+
+	<script>
+		// ajax：asyncchronous javascript and XML
+		// jesse james g.....
+		// javascript  xmlhttprequest对象
+		// xml html txt json
+		// php获取mysql上的数据、把它呈现在页面
+		
+        $('input').click(function(){
+        	 $('#show').load('get.php?user=张堃')
+        })
+
+	</script>
+</body>
+</html>

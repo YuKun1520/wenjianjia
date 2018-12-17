@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>regexp - string - match</title>
+</head>
+<body>
+    <script>
+           var pattern = /陈晶/g;   //全局搜索
+           var str = '他叫陈晶，真的是陈晶吗？';
+           alert(str.match(pattern))    //匹配到一个数组，返回了两个陈晶
+           alert(str.match(pattern) instanceof Array)   // true
+        </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>获取控制</title>
+</head>
+<body>
+    <script>
+        // 使用.元字符
+        // var pattern = /ba.du/;  //匹配一个任意字符
+        // var str = 'baidu';
+        // alert(pattern.test(str));
+        // 重复匹配
+        // var pattern = /ba.*du/;  //匹配0个一个或多个任意字符
+        // var str = 'baidu';       
+        // alert(pattern.test(str));
+
+        //字符类匹配
+        // var pattern = /b[^0-9]*du/;  //[^0-9]*表示任个非0-9的字符  ^表示非 
+        // var str = 'baidu';
+        // alert(pattern.test(str))
+        
+        // var pattern = /b[a-z][A-Z]+du/;  // + 表示一次或多次
+        // var str = 'bsSGFFSdu';
+        // alert(pattern.test(str))
+
+        //使用\w元字符号匹配
+        // var pattern = /b\w*du/;  // \w 匹配包括下划线的任何单词字符。等价于“[A-Za-z0-9_]"。
+        // var str = 'bai_1124du';
+        // alert(pattern.test(str))
+
+        //使用\d元字符号匹配
+        // var pattern = /baidu\d*/;  // \d* 匹配任意多个数字
+        // var str = 'baidu1111aaaaa';
+        // alert(pattern.test(str))     
+
+        //使用\D元字符号匹配
+        // var pattern = /baidu\D{2,5}/;  // \D{2,} 非数字 
+        // var str = 'baiduqqqqq';
+        // alert(pattern.test(str))     
+
+        // var pattern = /^baidu*$/;
+        // var str = 'baidu';
+        // alert(pattern.test(str))  
+
+   
+        // var pattern = /baidu\b/;  ///b是否到达边界
+        // var str = 'baidubaidu';
+        // alert(pattern.test(str))  
+        
+        //  var pattern = /baidu|google|360|bing/;   //匹配任何一种 字符串
+        // var str = 'baidu';   
+        // alert(pattern.test(str))      
+        
+        // var pattern = /(baidu){3,5}/;  
+        // var str = 'baidubaidubaidubaidubaidufalse';   
+        // alert(pattern.test(str))     
+        
+        // var pattern = /(bai(.*)du)/;  
+        // var str = 'baiyingyuxindu';   
+        // // alert(pattern.test(str))  
+        // str.match(pattern)
+        // alert(RegExp.$1)       
+
+        // var pattern = /a(.*)a/;
+        // var str = 'hello abaidua';
+        // var result = str.replace(pattern,'<strong>$1</strong>');
+        // document.write(result)
+        
+ 
+        // var pattern = /[a-z]+?/;   //?关闭贪婪模式
+        // var str = 'qweroiwuriwoursljfdslkjf';
+        // var result = str.replace(pattern,'xxx');
+        // document.write(result)   
+
+        
+ 
+        // var pattern = /^[\u4e00-\u9fa5]+$/;   //只能是中文
+        // var str = '应煜鑫';
+        // alert(pattern.test(str))
+
+        // var pattern = /\s/g;
+        // var str = ' 11 ff= d= frsfs\nfsf ';
+        // // pattern.test(str);
+        // // alert(pattern.test(str))
+        // // if(pattern.test(str)){
+        // //     alert('用户名不能许包含空格')
+        // // }
+        // // var result = str.replace(pattern,'');
+        // // alert(result)
+        
+        var pattern = /^\s+|\s$/g;
+        var str = ' a ';
+        var result = str.replace(pattern,'');
+        alert(result)
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>load</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+     
+     <input type="button" value="异步的数据请求" />
+     <ul id="show">
+
+     </ul>
+
+
+	<script>
+         $('input').one('click',function(){
+            // $('#show').html('')
+             $.get('test.json',function(json,status,xhr){
+                if(status==="success"){
+                    var json ;
+                    if(location.href=="http://localhost/0910/code/jquery%20-%20day8/get2.html"){
+                         json = json;
+                    }else{
+                         json = JSON.parse(json);
+                    }
+                    $.each(json,function(i,v){
+                        // console.log(i,v.username)
+                        // $('#show').html(function(index,value){
+                        //    return v.username+value
+                        // })
+                        $('#show').append('<li>'+v.username+'</li>')
+                    })
+                }
+             })
+         })    
+		
+	</script>
+</body>
+</html>
