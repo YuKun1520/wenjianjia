@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../scripts/vue.min.js"></script>
+    <!-- <script src="https://vuejs.org/js/vue.js"></script> -->
+</head>
+<body>
+
+    <div id="app">
+      <ul>
+          <li v-for="(key,value) in json" key="index"> {{key}}{{value}}</li>
+      </ul>
+    </div>
+    <script>
+     const v =  new Vue({
+            el:'#app',   
+            data:{      
+                msg:"hello Vue!",
+                ok:true,
+                family:['父亲',"母亲","妻子","儿子","我"],
+                json:{
+                   "父亲":"60",
+                   "母亲":"58",
+                   "妻子":"32",
+                   "我":"36"
+                }
+            }
+        })
+        </script>
+</body>
+</html>

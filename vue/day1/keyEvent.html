@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../scripts/vue.min.js"></script>
+    <!-- <script src="https://vuejs.org/js/vue.js"></script> -->
+</head>
+<body>
+
+    <div id="app">
+        <input type="text" v-on:keydown="changed" v-model="msg">
+        <div v-show="display">{{keycode}}</div>
+    </div>
+    <script>
+     new Vue({
+            el:'#app',   
+            data:{      
+                msg:"hello Vue!",
+                display:true,
+                keycode:""
+            },
+            methods:{
+                changed:function(e){
+                //    this.display = !this.display;
+                     if(event.keyCode===65){
+                        this.keycode = e.keyCode
+                     }
+                }
+            }
+        })
+        </script>
+</body>
+</html>

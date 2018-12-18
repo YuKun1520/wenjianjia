@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script src="../scripts/vue.min.js"></script> -->
+    <script src="https://vuejs.org/js/vue.js"></script>
+</head>
+<body>
+<!-- 只能有一个根目录 -->
+    <div id="app" v-show="true">
+      {{msg}}  
+    </div>
+    <script>
+        //  {{}}  在作用域里面放了我们想要输出的模版，模版里面放入data里面你定义的变量
+        new Vue({
+            el:'#app',   //vue的作用域。作用范围
+            data:{       //保存数据的地方
+                msg:"hello Vue!",
+                ok:true
+            }
+        })
+        </script>
+</body>
+</html>
