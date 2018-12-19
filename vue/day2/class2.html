@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../scripts/vue.js"></script>
+    <style>
+        .red{
+           background-color:brown;
+           width:100px;
+           height:100px;
+           font-size: 55px;
+           color:darkgreen
+        }
+        .font{
+            color:rgb(240, 232, 232)
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <button type="button" @click="changed">changed</button>
+    <div :class="myStyle">vue</div>
+</div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                myStyle:['red']
+            },
+            methods:{
+                changed(){
+                    
+                    // if(this.myStyle.length===1){
+                    //     this.myStyle.push('font')
+                    // }else{
+                    //     this.myStyle.pop()
+                    // }
+                    
+                    this.myStyle.length===1?this.myStyle.push('font'):this.myStyle.pop()
+                    
+
+                }
+            }
+        })
+        </script>
+</body>
+</html>

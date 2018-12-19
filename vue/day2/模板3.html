@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../scripts/vue.js"></script>
+    <!-- <script src="https://vuejs.org/js/vue.js"></script> -->
+</head>
+<body>
+   <div id="app">
+       <button type="button" @click="changed">changed</button>
+       <img v-bind:src="imgurl" :alt="alt">
+   </div>
+
+   <script>
+       new Vue({
+           el:"#app",
+           data:{
+               n:0,
+               imgurl:"logo.png",
+               alt:'vuejs logo'
+           },
+           methods:{
+                changed(){
+                    this.n++;
+                    console.log(this.n%2)
+                    this.n%2===1?this.imgurl='dcloud.gif':this.imgurl = 'logo.png'
+                }
+
+
+           }
+       })
+   </script>
+
+</body>
+</html>
