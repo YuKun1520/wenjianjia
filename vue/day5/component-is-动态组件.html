@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全局组件2</title>
+    <!-- <script src="../scripts/vue.js"></script> -->
+    <script src="https://vuejs.org/js/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <button @click="useCompentent='myhead'">myhead</button>
+        <button @click="useCompentent='myfooter'">myfooter</button>
+       <compentent :is="useCompentent"></compentent>
+    </div>
+
+    <script type="text/x-template" id="myhead">
+        <div class="head">
+            {{msg}}
+            <button @click="changed" type="button">changed</button>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="myfooter">
+        <div class="head">
+            {{msg}}
+            <button @click="changed" type="button">changed</button>
+        </div>
+    </script>
+
+    <script>
+        new Vue({
+        //    el:"#app",
+            data:{
+                "useCompentent":"myhead"
+            },
+           components:{
+              myhead:{
+                   name:"myhead",
+                   data(){
+                       return {
+                           msg:"myhead"
+                       }
+                   },
+                   methods:{
+                       changed:function(){
+                           this.msg="陈晶"
+                       }
+                    },
+                   template:'#myhead'
+               },
+               myfooter:{
+                name:"myfooter",
+                   data(){
+                       return {
+                           msg:"myfooter"
+                       }
+                   },
+                   methods:{
+                       changed:function(){
+                           this.msg="陈晶"
+                       }
+                    },
+                   template:'#myfooter'
+               }
+           }
+        }).$mount("#app")
+    
+    </script>
+</body>
+</html>

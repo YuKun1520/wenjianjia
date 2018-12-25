@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../scripts/vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script> -->
+</head>
+
+<body>
+
+    <div id="app">
+          {{msg}}
+    </div>
+
+
+    <script>
+
+        // created  实例已经创建了
+        // beforeCompile  在实例偏译之前
+        // compiled  在实例偏译之后
+        // ready  在实例已经渲染到文档之中
+        // beforeDestroy  在销毁之前
+        // destroyed销毁之后
+
+       var v = new Vue({
+            el: "#app",
+            data: {
+                msg: "hello vue",
+                red:""
+            },
+            created(){
+                console.log('实例已经创建了')
+            },
+            beforeCompile(){
+                console.log('在实例偏译之前')
+            },
+            compiled(){
+                console.log('在实例偏译之后')
+            },
+            ready(){
+                console.log('在实例已经渲染到文档之中')
+            },
+            beforeDestroy() {
+                        //在销毁之前
+                        console.log('在销毁之前')
+            },
+            destroyed(){
+                //销毁之后
+                console.log('销毁之后')
+            }
+
+        })
+        console.log(v)
+        window.onclick=function(){
+            v.$destroy()
+            console.log(v)
+        }
+
+
+    </script>
+</body>
+
+</html>

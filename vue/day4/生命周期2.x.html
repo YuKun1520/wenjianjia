@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <button type="button" @click="msg=1">{{msg}}</button>
+    </div>
+
+
+    <script>
+
+      let v = new Vue({
+          el:"#app",
+          data:{
+              msg:"hello vue"
+          },
+          beforeCreate(){
+              console.log(this.msg+" - beforeCreate刚则创建了这个实例，属性还没有绑定")
+          },
+          created(){
+              console.log(this.msg+" - created实例创建守毕，属性已经绑定了")
+          },
+          beforeMount(){
+            //   debugger;
+              console.log("在模板渲染之前")
+          },
+          mounted(){
+              console.log("在模板渲染之的后")
+          },
+          beforeUpdate(){
+            console.log("数据更新之前")
+          },
+          updated(){
+            console.log("数据更新之后")
+          },
+          beforeDestroy(){
+            console.log("销毁之前")
+          },
+          destroyed(){
+            console.log("销毁之后")
+          }
+      })
+
+        // console.log(v)
+        window.onclick=function(){
+            v.$destroy()
+            console.log(v)
+        }
+
+
+    </script>
+</body>
+
+</html>

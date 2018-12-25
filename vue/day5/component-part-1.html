@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全局组件2</title>
+    <!-- <script src="../scripts/vue.js"></script> -->
+    <script src="https://vuejs.org/js/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+       <my-head></my-head>
+    </div>
+
+    <script>
+        new Vue({
+           components:{
+               "my-head":{
+                   name:"head",
+                   data(){
+                       return {
+                           msg:"我是局部的蒋圣福"
+                       }
+                   },
+                   template:`<div class="head">
+                       {{msg}}
+                   </div>`
+               }
+           }
+        }).$mount("#app")
+    
+    </script>
+</body>
+</html>

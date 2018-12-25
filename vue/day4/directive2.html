@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../scripts/vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script> -->
+</head>
+
+<body>
+
+    <div id="app">
+        <div v-yingyuixn="blue">
+            {{msg}}
+        </div>
+    </div>
+
+
+    <script>
+        Vue.directive('yingyuixn', function (val) {
+            console.log(this)
+            this.el.style.background = val
+            this.el.onclick = function () {
+                this.style.background = "red"
+            }
+        })
+
+        new Vue({
+            el: "#app",
+            data: {
+                msg: "hello vue",
+                blue:"blue"
+            }
+        })
+    </script>
+</body>
+
+</html>

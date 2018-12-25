@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全局组件2</title>
+    <!-- <script src="../scripts/vue.js"></script> -->
+    <script src="https://vuejs.org/js/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+       <myhead :fu="msg" :arrs='arr'></myhead>
+    </div>
+
+    <script type="text/x-template" id="myhead">
+        <div class="head">
+            {{msg}}
+            {{fu}}{{arrs}}
+            <button @click="changed" type="button">changed</button>
+        </div>
+    </script>
+
+
+    <script type="text/x-template" id="mynav">
+        <div class="mynav">
+            {{mynav}}
+            <mylogo />
+        </div>
+    </script>
+
+    <script type="text/x-template" id="mylogo">
+        <div class="mylogo">
+            mylogo
+        </div>
+    </script>
+
+    <script>
+        new Vue({
+        //    el:"#app",
+            data:{
+                msg:"fdsfsf",
+                arr:[3,5,6]
+            },
+           components:{
+              myhead:{
+                   name:"myhead",
+                   props:{
+                      'fu':String,
+                      'arrs':Array
+                   },
+                //    props:['fu','arr'],
+                   data(){
+                       return {
+                           msg:"我是局部的蒋圣福"
+                       }
+                   },
+                   methods:{
+                       changed:function(){
+                           this.msg="陈晶"
+                       }
+                    },
+                   template:'#myhead',
+                   components:{
+                       mynav:{
+                          template:'#mynav',
+                          data(){
+                             return {
+                                mynav:"mynav"
+                             }
+                          },
+                          components:{
+                              mylogo:{
+                                  template:"#mylogo"
+                              }
+                          }
+                       }
+                   }
+               }
+           }
+        }).$mount("#app")
+    
+    </script>
+</body>
+</html>

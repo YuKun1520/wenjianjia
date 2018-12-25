@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../scripts/vue.js"></script>
+    <style>
+        #app{
+            width:400px;
+            border:1px solid #ddd;
+            height: auto;
+            overflow: hidden;
+            margin:100px auto
+        }
+       div{
+           width:100%;
+           height:200px;
+           background: #ccc;
+       }
+       header{
+           display: flex;
+           flex-wrap: nowrap;
+           justify-content: space-between;
+           border-bottom: 1px solid #dddddd
+       }
+       button{
+           min-width:80px;
+           height:45px;
+           line-height: 45px;
+           border:none;
+           color:#fff;
+           background: #000
+       }
+       button.active{
+           background: red;
+       }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <header>
+       <button @click='changed($index)' v-for="val in btnVal" v-bind:class='$index===index?"active":""'>{{val}}</button>
+    </header>
+    <section>
+        <div v-show="$index===index?true:false" v-for="val in divContent">{{val}}</div>
+    </section>
+</div>
+    <script>
+        new Vue({
+          el:"#app",
+          data:{
+              index:0,
+              btnVal:['陈晶','家乐','圣福','离开我们的国亮'],
+              divContent:['18岁了，大学已经毕业了','家乐自学了PHP','圣福的进步很快。很努力','希望国亮好好学习，天天向上']
+          },
+          methods:{
+            changed(i){
+               this.index = i;
+            }
+          }
+        })
+    </script>
+</body>
+</html>

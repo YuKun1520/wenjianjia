@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../scripts/vue.js"></script>
+    </head>
+<body>
+    <div id="app">
+        <div @click='changed' :style="[myStyle,green]"></div>
+    </div>
+    <script>
+         new Vue({
+            el:"#app",
+            data:{
+                myStyle:{
+                   width:'400px',
+                   height:'400px',
+                   background:'red',
+                   transition:'600ms'
+                },
+                green:{
+                    background:'green',
+                }
+            },
+            methods:{
+                changed(){
+                    this.myStyle.width='100px';
+                    this.myStyle.height='100px';
+                    this.green.background='red';
+
+                }
+            }
+        })
+        </script>
+
+</body>
+</html>
