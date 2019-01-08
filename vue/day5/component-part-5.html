@@ -9,32 +9,26 @@
     <script src="https://vuejs.org/js/vue.js"></script>
 </head>
 <body>
-
     <div id="app">
        <myhead></myhead>
     </div>
-
     <script type="text/x-template" id="myhead">
         <div class="head">
             {{msg}}
             <button @click="changed" type="button">changed</button>
         </div>
     </script>
-
-
     <script type="text/x-template" id="mynav">
         <div class="mynav">
             {{mynav}}
             <mylogo />
         </div>
     </script>
-
     <script type="text/x-template" id="mylogo">
         <div class="mylogo">
             mylogo
         </div>
     </script>
-
     <script>
         new Vue({
         //    el:"#app",
